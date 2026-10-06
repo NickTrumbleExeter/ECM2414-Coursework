@@ -14,15 +14,27 @@ public class CardDeck{
 
         //check path is valid?
         Path packPath = requestPackPath(playerCount);
+
+        //deal cards into decks from input packs
+
+        //deal cards into hands from decks
+
+        //create output files
+
+        //loop through turns and writing to output files
+
+        
     }
 
-    private Path requestPackPath(int playerCount){
+    private static Path requestPackPath(int playerCount){
+        //request location of the pack
         System.out.println("Enter the location of the input pack:");
         Path packPath = Path.of(scanner.nextLine());
 
+        //checks is file .txt file
         if (packPath.getFileName().toString().endsWith(".txt")){
 
-            //count lines as well
+            //test for line count = 8n
             int count = 0;
             Scanner fileReader = new Scanner(packPath);
             do{
@@ -35,7 +47,7 @@ public class CardDeck{
             }
         }
 
-
+        //if conditions not met, call function again
         System.out.println("Invalid file submitted.");
         packPath = requestPackPath();
         return packPath;    
